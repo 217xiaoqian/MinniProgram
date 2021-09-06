@@ -1,0 +1,7 @@
+{
+  "//": "全局的配置 比如window tabbar等",
+  "pages": [
+    "pages/home/home",
+    "pages/about/about"
+  ]
+}
