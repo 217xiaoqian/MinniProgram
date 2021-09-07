@@ -1,0 +1,17 @@
+<!--pages/view/view.wxml-->
+<view>块级元素</view>
+
+<view>
+  <text>baobaoli</text>
+  <button size="mini">baoli</button>
+</view>
+
+<!-- hover-stop-propagation 阻止祖先节点出现点击态  -->
+<view class="box2" hover-class="hover-box2">
+  <view class="box1"
+      hover-class="hover-view"
+      hover-start-time="20"
+      hover-stop-propagation>
+    box1
+  </view> 
+</view>
