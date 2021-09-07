@@ -1,0 +1,18 @@
+<!--pages/image/image.wxml-->
+<!-- 
+  image标签可以写成单，双标签
+  image组件有默认大小
+ -->
+<image src="../../assets/test/kobe.jpg" />
+
+<!-- 显示相册中的图片 -->
+<button bindtap="handleChooseAlbum">选中图片</button>
+<image src="{{imagePath}}"></image>
+
+
+<!-- bingload 监听图片加载完成 lazy-load 懒加载 -->
+<image wx:for="{{1}}" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" bindload="handleImageLoad" lazy-load></image>
+
+<!-- show-menu-by-longpress 长按图片出现识别小程序码-->
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" show-menu-by-longpress></image>
+
