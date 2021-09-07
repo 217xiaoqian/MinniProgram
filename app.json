@@ -1,6 +1,8 @@
 {
   "//": "全局的配置 比如window tabbar等",
   "pages": [
+    "pages/button/button",
+    "pages/text/text",
     "pages/home/home",
     "pages/about/about"
   ]
