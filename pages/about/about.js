@@ -1,18 +1,36 @@
 // pages/about/about.js
+// 获取app.js的全局变量
+const app = getApp()
+console.log(app.gobalData.data)
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
 
+   // ---------------------初始化数据------------------------------------
+  data: {
+    list: []
+  },
+// -------------------------监听生命周期函数-------------------------------
+  handleGetUserInfo(event) {
+    console.log('用户信息',event)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const this_ = this
+    wx.request({
+      url: 'http://152.136.185.210:7878/api/m5/recommend',
+      success(res) {
+        const data = res.data.data.list
+        this_.setData({
+          list: data
+        })
+      }
+    })
   },
 
   /**
@@ -62,5 +80,20 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+// 监听其他事件 -------------------------------
+onPageScroll(obj) {
+  console.log(obj)
+},
+
+//监听页面滚动到底部
+onReachBottom() {
+  console.log('页面到底部')
+},
+
+// 顶部下拉刷新
+onPullDownRefresh() {
+  console.log('下拉刷新')
+}
 })

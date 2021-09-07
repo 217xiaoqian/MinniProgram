@@ -1,32 +1,11 @@
-// pages/home/home.js
+// pages/profile/profile.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name: 'baobaoli',
-    students: [
-      {id: 110, name: 'kobe'},
-      {id: 111, name: 'baobaoli'},
-      {id: 112, name: 'll'},
-    ],
-    count: 0
-  },
 
-  handleBtnClick() {
-    // 界面不刷新
-    // this.data.count ++
-    // console.log(this.data.count)
-    this.setData({
-      count: this.data.count + 1
-    })
-  },
-
-  handleSub() {
-    this.setData({
-      count: this.data.count - 1
-    })
   },
 
   /**
@@ -82,6 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
