@@ -1,0 +1,11 @@
+<!--pages/template/template.wxml-->
+<!-- 模板未使用前 不会渲染 -->
+<!-- import不能循环导入 -->
+<import src="../components/template.wxml"></import>
+<!-- <include src="../components/template.wxml" /> -->
+
+<template is="content" data="{{btnText: '按钮', content: 'wosjo'}}"/>
+
+<!-- include不能导入template 但是可以递归导入-->
+<include src="../views/header.wxml"></include>
+<include src="../views/footer.wxml"></include>
