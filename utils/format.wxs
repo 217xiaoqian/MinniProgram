@@ -1,0 +1,17 @@
+function priceFormat(price, num = 2) {
+  return price.toFixed(num)
+}
+
+// 时间格式化
+function dateFormat(timep, format) {
+  /**
+   * @params timep: 时间戳
+   * @params format： 时间展示格式
+   */
+  return '2021-10-1'
+}
+
+module.exports = {
+  priceFormat: priceFormat,
+  dateFormat: dateFormat
+}

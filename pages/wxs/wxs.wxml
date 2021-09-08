@@ -1,0 +1,26 @@
+<!--pages/wxs/wxs.wxml-->
+<!-- wxml中{{}}中不能调用Page和Component中的函数 -->
+<!-- 方式一 在xml文件中定义 -->
+<!-- <wxs module="info">
+  var foo = 'Hello '
+  var sum = function(num1, num2) {
+    return num1 + num2
+  }
+  module.exports = {
+    foo: foo,
+    sum: sum
+  }
+</wxs> -->
+
+<!-- 2 单独文件定义 进行导入使用 -->
+<wxs src="../../utils/math.wxs" module="info"></wxs>
+
+<view>{{info.foo}}</view>
+<view>{{info.sum(1,2)}}</view>
+
+
+<!-- 实际应用 -->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+<view>{{format.priceFormat(price)}}</view>
+
+<view>{{format.dateFormat(tmp, 'yy-MM-dd hh:mm:ss')}}</view>
