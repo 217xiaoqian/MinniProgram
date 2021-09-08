@@ -1,0 +1,22 @@
+<!--pages/wxml/wxml.wxml-->
+<view>{{nowTime}}</view>
+
+<button size="mini" bindtap="handleSwitchColor">change color</button>
+<view class="box {{isActive ? 'active' : ''}}">haah</view>
+
+
+<!-- 列表渲染 -->
+<text wx:for="{{'codewhy'}}">{{item}} {{index}}</text>
+<text wx:for="{{9}}">{{item}}</text>
+
+<block wx:for="{{3}}">
+  <button size="mini">按钮</button>
+  <view>baobaoli</view>
+  <text>ll</text>
+</block>
+
+<!-- wx-for item index自定义名字 -->
+<view wx:for="{{moives}}" wx:for-item="move" wx:for-index="index" wx:key="item">{{move}} {{index}}</view>
+
+<!-- key的作用 -->
+<view wx:for="{{['a', 'b', 'c']}}" wx:key="item">{{item}}</view>
