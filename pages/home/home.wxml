@@ -1,5 +1,44 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World</text>
-<button size="mini">按钮</button>
+<button size="mini" bind:tap='handleClick'>按钮</button>
 
-<view>知识点1</view>
+<view class="box" 
+      bind:touchstart="handleTouchStart" 
+      bindtouchmove="handleTouchMove" 
+      bindtouchend="handleTouchEnd" 
+      bindlongpress="handleLongpress">
+        知识点1
+  </view>
+
+
+<!-- 事件对象分析 -->
+<!-- touches:用于记录当前有几个手指在小程序中触摸及对应触摸点的信息  changeTouches: 记录手指变化后的信息 -->
+<!-- touches在bindtouchend事件数组为0  changeTouches的数组为结束触摸的手指数-->
+<button size="mini" bindtap="handleEventClick" bindtouchend="handleEventEnd">baobaoli</button>
+
+<!-- target 和 currentTarget-->
+<view id="outer" class="outer" bindtap="handleOuterClick">outer
+  <view id="inner" class="inner" bindtap="handleinnerClick">inner</view>
+</view>
+
+<!-- 事件的传递参数 -->
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="index">
+    <view class="item" bindtap="handleItemClick" data-index="{{index}}" data-item="{{item}}">{{item}}</view>
+  </block>
+</view>
+
+<!-- 事件冒泡和捕获 -->
+<!-- bind 一层层传递 -->
+<!-- 阻止传递事件 -->
+<view class="view1 container" 
+      capture-bind:tap="handleCaptureView1"
+      bindtap="handleClickView1">
+  <view class="view2 container"
+        capture-bind:tap="handleCaptureView2"
+        bindtap="handleClickView2">
+    <view class="view3"
+          capture-bind:tap="handleCaptureView3"
+          catchtap="handleClickView3"></view>
+  </view>
+</view>

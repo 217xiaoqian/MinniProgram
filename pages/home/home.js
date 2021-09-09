@@ -5,62 +5,62 @@ Page({
    * 页面的初始数据
    */
   data: {
+    titles: ['shoes', 'clothes', 'trousers']
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleClick() {
+    console.log('呗今典')
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleTouchStart() {
+    console.log("handleTouchStart")
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleTouchMove() {
+    console.log("handleTouchMove")
+  },
+  handleTouchEnd() {
+    console.log("handleTouchEnd")
+  },
+  handleLongpress() {
+    console.log("handleLongpress")
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleEventClick(event) {
+    console.log(event)
+  },
+  handleEventEnd(event) {
+    console.log('+++++++', event)
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleOuterClick(event) {
+    console.log('outer', event)
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handleinnerClick(event) {
+    console.log('inner', event)
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleItemClick(event) {
+    console.log(event.currentTarget.dataset.index)
+    console.log(event.currentTarget.dataset.item)
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  // ------事件冒泡和捕获--------------
+  handleCaptureView1() {
+    console.log('handleCaptureView1')
+  },
+  handleClickView1() {
+    console.log('handleClickView1')
+  },
+  handleCaptureView2() {
+    console.log('handleCaptureView2')
+  },
+  handleClickView2() {
+    console.log('handleClickView2')
+  },
+  handleCaptureView3() {
+    console.log('handleCaptureView3')
+  },
+  handleClickView3() {
+    console.log('handleClickView3')
+  },
 })
