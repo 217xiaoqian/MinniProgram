@@ -1,2 +1,15 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<!-- 给组件传递数据 -->
+<my-prop title="baoli" content="content"></my-prop>
+
+<!-- 传递样式 -->
+<my-prop titleclass='red' title="baoli" contentclass='red'></my-prop>
+<my-prop titleclass='green' title="baoli"></my-prop>
+<my-prop titleclass='blue' title="baoli"></my-prop>
+
+<!-- 自定义事件 -->
+<view>当前计数: {{count}}</view>
+<my-event bind:increment="handleincrement"></my-event>
+
+<!-- 示例 -->
+<w-tab-control titles="{{['衣服', '裤子', '鞋子']}}" bind:handleItemClick="itemClick" />

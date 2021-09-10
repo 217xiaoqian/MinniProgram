@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    count: 0
 
+  },
+  handleincrement(event) {
+    this.setData({
+      count: this.data.count + 1
+    })
+    console.log(event)
+  },
+
+  itemClick(event) {
+    console.log('当前点击:', event.detail.index )
   },
 
   /**
